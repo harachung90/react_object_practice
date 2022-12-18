@@ -16,14 +16,12 @@ function App() {
 
     function toggleFavorite() {
         //console.log("Toggle favorite")
-        setContact(
+        setContact(prevState => (
             {
-                firstName: contact.firstName,
-                lastName: contact.lastName,
-                phone: contact.phone,
-                email: contact.email,
-                isFavorite: !contact.isFavorite,
+                 ...prevState,
+                isFavorite: !contact.isFavorite
             }
+            )
         )
     }
 
