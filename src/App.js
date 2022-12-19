@@ -3,6 +3,7 @@ import React from 'react';
 import user from './images/girl.png';
 import emptyStar from './images/star-empty.png';
 import filledStar from './images/star-filled.png';
+import Star from "./Star";
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
         lastName: "Doe",
         phone: "+1 (719) 555-1212",
         email: "itsmyrealname@example.com",
-        isFavorite: false
+        isFavorite: true
     })
 
     function toggleFavorite() {
@@ -30,11 +31,12 @@ function App() {
             <article className="card">
                 <img src={user} className="card--image"/>
                 <div className="card--info">
-                    <img
+{/*                    <img
                         src={contact.isFavorite ? filledStar : emptyStar}
                         className="card--favorite"
                         onClick={toggleFavorite}
-                    />
+                    />*/}
+                    <Star isFilled={contact.isFavorite} handleClick={toggleFavorite}/>
                     <h2 className="card--name">
                         {contact.firstName} {contact.lastName}
                     </h2>
